@@ -3,28 +3,6 @@ import { View, Text, Image, TextInput, Button, StyleSheet } from 'react-native';
 
 // ES6 Class feature
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      counter: 0
-    };
-  }
-
-  // Component LifeCycle method
-  componentDidMount() {
-
-    // Arrow Function
-    setInterval(() => {
-      //ES6 Object desctructuring
-      const { counter } = this.state;
-
-      // Re-render using this.setState
-      this.setState({
-        counter: counter + 1
-      });
-    }, 1000);
-  }
-
   // Only Required LifeCycle method by component
   render() {
     return (
@@ -39,11 +17,13 @@ class App extends Component {
             placeholder="Email"
             keyboardType="email-address"
             style={styles.inputText}
+            underlineColorAndroid="transparent"
           />
           <TextInput
             placeholder="Password"
             secureTextEntry
             style={styles.inputText}
+            underlineColorAndroid="transparent"
           />
           <Button
             title="Login"
@@ -66,7 +46,8 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     borderColor: '#ccc',
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    width: '100%',
   },
   loginBox: {
     flex: 2,
