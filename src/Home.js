@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button, AsyncStorage } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+import LogoutButton from './LogoutButton';
 
 class Home extends Component {
-  static navigationOptions = {
-    title: 'Home'
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Home',
+    headerRight: <LogoutButton navigation={navigation} />
+  })
+
+  logout() {
+    alert("Logout");
   }
 
   render() {
